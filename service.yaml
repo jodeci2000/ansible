@@ -1,0 +1,8 @@
+---
+- name: Ansible start service
+  hosts: all
+  tasks:
+    - name: Start a service with systemd
+      systemd:
+        name: sshd
+        state: started
