@@ -1,8 +1,8 @@
 ---
-- name: Ansible start service
+- name: SSH start service
   hosts: all
   tasks:
     - name: Start a service with systemd
       systemd:
-        name: sshd
-        state: started
+        name: cups
+        state: stopped
