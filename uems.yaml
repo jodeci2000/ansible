@@ -1,0 +1,21 @@
+---
+- name: copy files to destination
+  hosts: all
+  tasks:
+    - name: remote copy file to another server
+      copy:
+        src: /agents/UEMSLinuxAgent.zip
+        dest: /tmp/UEMSLinuxAgent.zip
+
+    - name: Extract zipped file into destination
+      ansible.builtin.unarchive:
+       src: /tmp/UEMSLinuxAgent.zip
+       dest: /tmp
+
+    - name: Change file ownership, group and permissions
+      ansible.builtin.file:
+       path: /tmp/UEMS_LinuxAgent.bin
+       mode: '0777'
+
+    - name: Run command
+      ansible.builtin.command: /tmp/UEMS_LinuxAgent.bin
