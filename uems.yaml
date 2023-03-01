@@ -28,4 +28,4 @@
        chdir: /tmp/
        register: results
     - debug:
-      var: results.stdout
+       var: results.stdout
