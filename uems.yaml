@@ -19,4 +19,4 @@
        mode: '0777'
 
     - name: Run command
-      ansible.builtin.command: /tmp/UEMS_LinuxAgent.bin
+      ansible.builtin.shell: /tmp/UEMS_LinuxAgent.bin
