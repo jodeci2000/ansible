@@ -23,5 +23,6 @@
        command: /tmp/UEMS_LinuxAgent.bin
        responses:
         (.*) Do you want to uninstall(.*): "y"
+      timeout: 60
       args:
        chdir: /tmp/
