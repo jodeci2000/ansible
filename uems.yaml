@@ -19,4 +19,6 @@
        mode: '0777'
 
     - name: Run command
-      ansible.builtin.command: chdir=/tmp UEMS_LinuxAgent.bin
+      ansible.builtin.shell: UEMS_LinuxAgent.bin
+      args:
+        chdir: /tmp/
