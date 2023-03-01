@@ -26,3 +26,6 @@
       timeout: 60
       args:
        chdir: /tmp/
+       register: results
+    - debug:
+      var: results.stdout
