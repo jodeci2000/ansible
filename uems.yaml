@@ -2,7 +2,7 @@
 - name: copy files to destination
   hosts: all
   tasks:
-    - name: remote copy file to another server
+    - name: download file from Satellite to another server
       get_url:
        url: https://ruh-sat-center.salam.sa/pulp/content/Default_Organization/Library/custom/UEMS/UEMSLinuxAgent_zip/UEMSLinuxAgent.zip
        dest: /tmp/UEMSLinuxAgent.zip
@@ -14,12 +14,12 @@
        dest: /tmp
        remote_src: yes
        
-    - name: Change file ownership, group and permissions
+    - name: Change file permissions
       ansible.builtin.file:
        path: /tmp/UEMS_LinuxAgent.bin
        mode: '0777'
 
-    - name: Run command
+    - name: Run the Script and automatically answer questions
       expect:
        command: /tmp/UEMS_LinuxAgent.bin
        responses:
