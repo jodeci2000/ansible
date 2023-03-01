@@ -9,7 +9,7 @@
 
     - name: Extract zipped file into destination
       ansible.builtin.unarchive:
-       src: /tmp/UEMSLinuxAgent.zip
+       remote_src: /tmp/UEMSLinuxAgent.zip
        dest: /tmp
 
     - name: Change file ownership, group and permissions
