@@ -27,5 +27,6 @@
        command: /tmp/UEMS_LinuxAgent.bin
        responses:
         (.*) Do you want to uninstall the existing agent and re-install this agent?(.*) : "y"
+      timeout: 30
       args:
        chdir: /tmp/
