@@ -18,14 +18,10 @@
        path: /tmp/UEMS_LinuxAgent.bin
        mode: '0777'
 
-    #- name: Run command
-    #  ansible.builtin.shell: /tmp/UEMS_LinuxAgent.bin
-    #  args:
-    #    chdir: /tmp/
     - name: Run command
       expect:
        command: /tmp/UEMS_LinuxAgent.bin
        responses:
-        (.*) Do you want to uninstall(.*) :"y"
+        (.*) Do you want to uninstall(.*): "y"
       args:
        chdir: /tmp/
