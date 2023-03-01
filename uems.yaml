@@ -6,7 +6,8 @@
       get_url:
        url: https://ruh-sat-center.salam.sa/pulp/content/Default_Organization/Library/custom/UEMS/UEMSLinuxAgent_zip/UEMSLinuxAgent.zip
        dest: /tmp/UEMSLinuxAgent.zip
-    
+       validate_certs: false
+       
     - name: Extract zipped file into destination
       ansible.builtin.unarchive:
        src: /tmp/UEMSLinuxAgent.zip
