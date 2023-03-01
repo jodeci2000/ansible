@@ -2,11 +2,11 @@
 - name: copy files to destination
   hosts: all
   tasks:
-  #- name: remote copy file to another server
-  #    copy:
-  #      src: /agents/UEMSLinuxAgent.zip
-  #      dest: /tmp/UEMSLinuxAgent.zip
-
+    - name: remote copy file to another server
+      get_url:
+       url: https://ruh-sat-center.salam.sa/pulp/content/Default_Organization/Library/custom/UEMS/UEMSLinuxAgent_zip/UEMSLinuxAgent.zip
+       dest: /tmp/UEMSLinuxAgent.zip
+    
     - name: Extract zipped file into destination
       ansible.builtin.unarchive:
        src: /tmp/UEMSLinuxAgent.zip
